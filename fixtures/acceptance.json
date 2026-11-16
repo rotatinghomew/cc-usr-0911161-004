@@ -1,0 +1,158 @@
+{
+  "scenario": "多国人工智能评测基准互认验证台",
+  "synthetic": true,
+  "records": [
+    {
+      "record_id": "benchmark_case-001",
+      "payload": {
+        "participant_code": "participant_code-0",
+        "benchmark_family": "benchmark_family-1",
+        "benchmark_version": "benchmark_version-2",
+        "metric_scale": "metric_scale-3",
+        "language_pack": "language_pack-4",
+        "risk_tier": 21.5,
+        "pass_threshold": 23.4,
+        "evidence_items": 25.3,
+        "unmapped_metrics": 27.2,
+        "waiver_count": 29.1,
+        "retest_pass_rate": 0.58,
+        "retest_code": "retest_code-1"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-002",
+      "payload": {
+        "participant_code": "participant_code-1",
+        "benchmark_family": "benchmark_family-2",
+        "benchmark_version": "benchmark_version-3",
+        "metric_scale": "metric_scale-4",
+        "language_pack": "language_pack-0",
+        "risk_tier": 25.2,
+        "pass_threshold": 27.1,
+        "evidence_items": 29.0,
+        "unmapped_metrics": 30.9,
+        "waiver_count": 32.8,
+        "retest_pass_rate": 0.69,
+        "retest_code": "retest_code-2"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-003",
+      "payload": {
+        "participant_code": "participant_code-2",
+        "benchmark_family": "benchmark_family-3",
+        "benchmark_version": "benchmark_version-4",
+        "metric_scale": "metric_scale-0",
+        "language_pack": "language_pack-1",
+        "risk_tier": 28.9,
+        "pass_threshold": 30.8,
+        "evidence_items": 32.7,
+        "unmapped_metrics": 34.6,
+        "waiver_count": 36.5,
+        "retest_pass_rate": 0.8,
+        "retest_code": "retest_code-3"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-004",
+      "payload": {
+        "participant_code": "participant_code-3",
+        "benchmark_family": "benchmark_family-4",
+        "benchmark_version": "benchmark_version-0",
+        "metric_scale": "metric_scale-1",
+        "language_pack": "language_pack-2",
+        "risk_tier": 32.6,
+        "pass_threshold": 34.5,
+        "evidence_items": 36.4,
+        "unmapped_metrics": 38.3,
+        "waiver_count": 40.2,
+        "retest_pass_rate": 0.91,
+        "retest_code": "retest_code-4"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-005",
+      "payload": {
+        "participant_code": "participant_code-4",
+        "benchmark_family": "benchmark_family-0",
+        "benchmark_version": "benchmark_version-1",
+        "metric_scale": "metric_scale-2",
+        "language_pack": "language_pack-3",
+        "risk_tier": 36.3,
+        "pass_threshold": 38.2,
+        "evidence_items": 40.1,
+        "unmapped_metrics": 42.0,
+        "waiver_count": 43.9,
+        "retest_pass_rate": 0.25,
+        "retest_code": "retest_code-0"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-006",
+      "payload": {
+        "participant_code": "participant_code-0",
+        "benchmark_family": "benchmark_family-1",
+        "benchmark_version": "benchmark_version-2",
+        "metric_scale": "metric_scale-3",
+        "language_pack": "language_pack-4",
+        "risk_tier": 40.0,
+        "pass_threshold": 41.9,
+        "evidence_items": 43.8,
+        "unmapped_metrics": 45.7,
+        "waiver_count": 47.6,
+        "retest_pass_rate": 0.36,
+        "retest_code": "retest_code-1"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-007",
+      "payload": {
+        "participant_code": "participant_code-1",
+        "benchmark_family": "benchmark_family-2",
+        "benchmark_version": "benchmark_version-3",
+        "metric_scale": "metric_scale-4",
+        "language_pack": "language_pack-0",
+        "risk_tier": 43.7,
+        "pass_threshold": 45.6,
+        "evidence_items": 47.5,
+        "unmapped_metrics": 49.4,
+        "waiver_count": 51.3,
+        "retest_pass_rate": 0.47,
+        "retest_code": "retest_code-2"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-008",
+      "payload": {
+        "participant_code": "participant_code-2",
+        "benchmark_family": "benchmark_family-3",
+        "benchmark_version": "benchmark_version-4",
+        "metric_scale": "metric_scale-0",
+        "language_pack": "language_pack-1",
+        "risk_tier": 47.4,
+        "pass_threshold": 49.3,
+        "evidence_items": 51.2,
+        "unmapped_metrics": 53.1,
+        "waiver_count": 55.0,
+        "retest_pass_rate": 0.58,
+        "retest_code": "retest_code-3"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    }
+  ]
+}
