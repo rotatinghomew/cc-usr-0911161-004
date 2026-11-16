@@ -1,0 +1,518 @@
+{
+  "scenario": "多国人工智能评测基准互认验证台 - 可比性归因样例",
+  "synthetic": true,
+  "baseline": {
+    "benchmark_family": "safety-bench",
+    "benchmark_version": "2.0"
+  },
+  "comparability": {
+    "baseline": {
+      "benchmark_family": "safety-bench",
+      "benchmark_version": "2.0",
+      "default_target_scale": "fraction",
+      "metrics": [
+        {
+          "metric_code": "accuracy",
+          "pass_threshold": 0.8,
+          "higher_is_better": true,
+          "weight": 1.0,
+          "required": true,
+          "target_scale": "fraction",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "metric_code": "refusal_rate",
+          "pass_threshold": 0.9,
+          "higher_is_better": true,
+          "weight": 1.0,
+          "required": true,
+          "target_scale": "fraction",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "metric_code": "calibration",
+          "pass_threshold": 0.75,
+          "higher_is_better": true,
+          "weight": 1.0,
+          "required": false,
+          "target_scale": "fraction",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "metric_code": "latency_ms",
+          "pass_threshold": 120.0,
+          "higher_is_better": false,
+          "weight": 1.0,
+          "required": false,
+          "target_scale": "milliseconds",
+          "value_range": [
+            0.0,
+            100000.0
+          ]
+        }
+      ]
+    },
+    "mappings": [
+      {
+        "mapping_id": "lang-zh-v1",
+        "mapping_version": 1,
+        "language_pack": "zh",
+        "default_target_scale": "fraction",
+        "confidence_floor": 0.75,
+        "aliases": {
+          "准确率": "accuracy",
+          "拒绝率": "refusal_rate"
+        },
+        "approved_conversions": [
+          [
+            "fraction",
+            "percent"
+          ],
+          [
+            "percent",
+            "fraction"
+          ],
+          [
+            "milliseconds",
+            "seconds"
+          ],
+          [
+            "seconds",
+            "milliseconds"
+          ]
+        ]
+      },
+      {
+        "mapping_id": "lang-en-v1",
+        "mapping_version": 1,
+        "language_pack": "en",
+        "default_target_scale": "fraction",
+        "confidence_floor": 0.75,
+        "aliases": {
+          "accuracy": "accuracy",
+          "refusal_rate": "refusal_rate"
+        },
+        "approved_conversions": [
+          [
+            "fraction",
+            "percent"
+          ],
+          [
+            "percent",
+            "fraction"
+          ],
+          [
+            "milliseconds",
+            "seconds"
+          ],
+          [
+            "seconds",
+            "milliseconds"
+          ]
+        ]
+      }
+    ],
+    "policy": {
+      "pass_threshold": 0.7,
+      "minimum_comparability": 0.6,
+      "hard_comparability_floor": 0.25,
+      "max_waiver_share": 0.25,
+      "allow_conditional": true,
+      "allow_waiver_for_required": true
+    },
+    "reviewed_at": "2026-11-16T00:00:00+00:00",
+    "observations": {
+      "benchmark_case-c01": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.86,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-a/run-1/accuracy",
+          "evidence_digest": "a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1",
+          "source_metric": "准确率"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.94,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-a/run-1/refusal",
+          "evidence_digest": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
+          "source_metric": "拒绝率"
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.81,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-a/run-1/calibration",
+          "evidence_digest": "a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3"
+        },
+        {
+          "metric_code": "latency_ms",
+          "value": 96.0,
+          "source_scale": "milliseconds",
+          "evidence_ref": "lab-a/run-1/latency",
+          "evidence_digest": "a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4"
+        }
+      ],
+      "benchmark_case-c02": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.84,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-b/run-2/accuracy",
+          "evidence_digest": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+          "source_metric": "accuracy"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.93,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-b/run-2/refusal",
+          "evidence_digest": "b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2b2"
+        }
+      ],
+      "benchmark_case-c03": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.88,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-c/run-3/accuracy",
+          "evidence_digest": "c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1c1",
+          "source_metric": "准确率"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.91,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-c/run-3/refusal",
+          "evidence_digest": "c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2",
+          "waiver": {
+            "waiver_id": "WV-001",
+            "reason": "language pack lacks a validated refusal-rate probe",
+            "approved_by": "joint-review-board",
+            "scope": [
+              "refusal_rate"
+            ],
+            "expires_at": "2027-01-01T00:00:00+00:00"
+          }
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.79,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-c/run-3/calibration",
+          "evidence_digest": "c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3"
+        },
+        {
+          "metric_code": "latency_ms",
+          "value": 105.0,
+          "source_scale": "milliseconds",
+          "evidence_ref": "lab-c/run-3/latency",
+          "evidence_digest": "c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4"
+        }
+      ],
+      "benchmark_case-c04": [
+        {
+          "metric_code": "accuracy",
+          "value": 83.0,
+          "source_scale": "percent",
+          "evidence_ref": "lab-d/run-4/accuracy",
+          "evidence_digest": "d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 92.0,
+          "source_scale": "percent",
+          "evidence_ref": "lab-d/run-4/refusal",
+          "evidence_digest": "d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2"
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.78,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-d/run-4/calibration",
+          "evidence_digest": "d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3"
+        },
+        {
+          "metric_code": "latency_ms",
+          "value": 0.11,
+          "source_scale": "seconds",
+          "evidence_ref": "lab-d/run-4/latency",
+          "evidence_digest": "d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4"
+        }
+      ],
+      "benchmark_case-c05": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.9,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-e/run-5/accuracy",
+          "evidence_digest": "e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.95,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-e/run-5/refusal",
+          "evidence_digest": "e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2"
+        }
+      ],
+      "benchmark_case-c06": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.87,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-f/run-6/accuracy",
+          "evidence_digest": "f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1f1"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.93,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-f/run-6/refusal",
+          "evidence_digest": "f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2"
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.8,
+          "source_scale": "ratio",
+          "evidence_ref": "lab-f/run-6/calibration",
+          "evidence_digest": "f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3"
+        }
+      ],
+      "benchmark_case-c07": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.85,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-g/run-7/accuracy",
+          "evidence_digest": "71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a71a"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.92,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-g/run-7/refusal",
+          "evidence_digest": "72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b72b7"
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.76,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-g/run-7/calibration",
+          "evidence_digest": "73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c73c7"
+        },
+        {
+          "metric_code": "latency_ms",
+          "value": 118.0,
+          "source_scale": "milliseconds",
+          "evidence_ref": "lab-g/run-7/latency",
+          "evidence_digest": "74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d74d7"
+        }
+      ],
+      "benchmark_case-c08": [
+        {
+          "metric_code": "accuracy",
+          "value": 0.82,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-h/run-8/accuracy",
+          "evidence_digest": "81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a81a8"
+        },
+        {
+          "metric_code": "refusal_rate",
+          "value": 0.9,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-h/run-8/refusal",
+          "evidence_digest": "82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b82b8",
+          "waiver": {
+            "waiver_id": "WV-002",
+            "reason": "pending probe harmonisation",
+            "approved_by": "joint-review-board",
+            "scope": [
+              "refusal_rate"
+            ],
+            "expires_at": "2027-01-01T00:00:00+00:00"
+          }
+        },
+        {
+          "metric_code": "calibration",
+          "value": 0.77,
+          "source_scale": "fraction",
+          "evidence_ref": "lab-h/run-8/calibration",
+          "evidence_digest": "83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c83c8",
+          "benchmark_version": "1.9"
+        },
+        {
+          "metric_code": "latency_ms",
+          "value": 130.0,
+          "source_scale": "milliseconds",
+          "evidence_ref": "lab-h/run-8/latency",
+          "evidence_digest": "84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d84d8"
+        }
+      ]
+    }
+  },
+  "records": [
+    {
+      "record_id": "benchmark_case-c01",
+      "payload": {
+        "participant_code": "lab-a",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "zh",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 0,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.88,
+        "retest_code": "run-1"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c02",
+      "payload": {
+        "participant_code": "lab-b",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "en",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 2,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.84,
+        "retest_code": "run-2"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c03",
+      "payload": {
+        "participant_code": "lab-c",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "zh",
+        "risk_tier": 3,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 1,
+        "waiver_count": 1,
+        "retest_pass_rate": 0.9,
+        "retest_code": "run-3"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c04",
+      "payload": {
+        "participant_code": "lab-d",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "percent",
+        "language_pack": "en",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 0,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.86,
+        "retest_code": "run-4"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c05",
+      "payload": {
+        "participant_code": "lab-e",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "sw",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 2,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.91,
+        "retest_code": "run-5"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c06",
+      "payload": {
+        "participant_code": "lab-f",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "zh",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 1,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.87,
+        "retest_code": "run-6"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c07",
+      "payload": {
+        "participant_code": "lab-g",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "en",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 0,
+        "waiver_count": 0,
+        "retest_pass_rate": 0.85,
+        "retest_code": "run-7"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    },
+    {
+      "record_id": "benchmark_case-c08",
+      "payload": {
+        "participant_code": "lab-h",
+        "benchmark_family": "safety-bench",
+        "benchmark_version": "2.0",
+        "metric_scale": "fraction",
+        "language_pack": "en",
+        "risk_tier": 2,
+        "pass_threshold": 0.8,
+        "evidence_items": 4,
+        "unmapped_metrics": 1,
+        "waiver_count": 1,
+        "retest_pass_rate": 0.82,
+        "retest_code": "run-8"
+      },
+      "state": "profiled",
+      "source": "synthetic-local-acceptance"
+    }
+  ]
+}

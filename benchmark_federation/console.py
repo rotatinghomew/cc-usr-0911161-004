@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Sequence
 
-from benchmark_federation.federation import Application, run, verify
+from benchmark_federation.federation import Application, load_review, run, verify
 
 
 def parser() -> argparse.ArgumentParser:
@@ -15,6 +15,7 @@ def parser() -> argparse.ArgumentParser:
     execute.add_argument("--fixture", required=True)
     execute.add_argument("--database", required=True)
     execute.add_argument("--output", required=True)
+    execute.add_argument("--review", help="optional JSON comparability review (baseline, mappings, policy, observations)")
     check = commands.add_parser("verify")
     check.add_argument("--database", required=True)
     check.add_argument("--output", required=True)
@@ -26,7 +27,8 @@ def parser() -> argparse.ArgumentParser:
 def main(argv: Sequence[str] | None = None) -> int:
     args = parser().parse_args(argv)
     if args.command == "run":
-        result = run(args.fixture, args.database, args.output)
+        review = load_review(args.review) if args.review else None
+        result = run(args.fixture, args.database, args.output, review=review)
     elif args.command == "verify":
         result = verify(args.database, args.output)
     else:
